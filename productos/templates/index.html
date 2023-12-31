@@ -1,23 +1,26 @@
-<h1>Productos</h1>
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Productos</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Stock</th>
-      <th>Puntaje</th>
-      <th>Categoría</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- Simbolo de porcentaje quiere decir que van instrucciones django -->
-    {% for producto in productos %}
+  <table class="table">
+    <thead>
       <tr>
-        <td>{{ producto.nombre }}</td>
-        <td>{{ producto.stock }}</td>
-        <td>{{ producto.puntaje }}</td>
-        <td>{{ producto.categoria }}</td>
+        <th>Nombre</th>
+        <th>Stock</th>
+        <th>Puntaje</th>
+        <th>Categoría</th>
       </tr>
-    {% endfor %}
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <!-- Simbolo de porcentaje quiere decir que van instrucciones django -->
+      {% for producto in productos %}
+        <tr>
+          <td>{{ producto.nombre }}</td>
+          <td>{{ producto.stock }}</td>
+          <td>{{ producto.puntaje }}</td>
+          <td>{{ producto.categoria }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
