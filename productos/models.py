@@ -1,3 +1,4 @@
+from django.utils import timezone
 from django.db import models
 
 
@@ -11,3 +12,10 @@ class Producto(models.Model):
     stock = models.IntegerField()
     puntaje = models.FloatField()
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    # actualizando modelos
+    # campo habilitado para actualizar automaticamente
+    # para eso datetimefield(default=timezone.now)
+    creado_en = models.DateTimeField(default=timezone.now)
+    # cada vez que se modifica models se hace un make migration en consola
+    # python manage.py makemigrations
+    # luego python manage.py migrate
