@@ -5,6 +5,10 @@ from django.db import models
 # Create your models here.
 class Categoria(models.Model):
     nombre = models.CharField(max_length=255)
+    
+    #personalizar el nombre de categorias en la BD
+    def __str__(self):
+        return self.nombre
 
 
 class Producto(models.Model):
@@ -19,3 +23,8 @@ class Producto(models.Model):
     # cada vez que se modifica models se hace un make migration en consola
     # python manage.py makemigrations
     # luego python manage.py migrate
+    
+    
+    #personalizar el nombre de productos en la BD
+    def __str__(self):
+        return self.nombre
